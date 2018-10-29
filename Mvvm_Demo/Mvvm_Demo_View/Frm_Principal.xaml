@@ -5,12 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mvvm_Demo_View"
         mc:Ignorable="d"
-        Title="Frm_Principal" Height="300" Width="300">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="107*"/>
-            <ColumnDefinition Width="39*"/>
-        </Grid.ColumnDefinitions>
+        Title="Frm_Principal" 
+        Height="386" 
+        Width="577"
+        ResizeMode="NoResize"
+        xmlns:vm="clr-namespace:Mvvm_Demo_ViewModel;assembly=Mvvm_Demo_ViewModel"
+        >
 
+    <Window.Resources>
+        <vm:Cls_Ecuaciones_Cuadraticas_ViewModel x:Key="cls_Ecuaciones_Cuadraticas_ViewModel"/>
+    </Window.Resources>
+
+    <Grid>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="309" Margin="10,42,0,0" VerticalAlignment="Top" Width="551">
+            <TabItem Header="Ecuaciones Cuadraticas">
+                <Grid Background="#FFE5E5E5">
+                    <GroupBox x:Name="groupBox" Header="Información de la ecuación" HorizontalAlignment="Left" Height="256" Margin="10,10,0,0" VerticalAlignment="Top" Width="521">
+                        <Grid Background="#FFE5E5E5" Margin="0,0,7,0">
+                            <Label x:Name="label" Content="A" HorizontalAlignment="Left" Height="36" Margin="22,10,0,0" VerticalAlignment="Top" Width="35" FontSize="20"/>
+                            <Label x:Name="label_Copy" Content="B" HorizontalAlignment="Left" Height="36" Margin="100,10,0,0" VerticalAlignment="Top" Width="35" FontSize="20"/>
+                            <Label x:Name="label_Copy1" Content="C" HorizontalAlignment="Left" Height="36" Margin="185,10,0,0" VerticalAlignment="Top" Width="35" FontSize="20"/>
+                            <TextBox x:Name="txtA" HorizontalAlignment="Left" Height="23" Margin="10,51,0,0" TextWrapping="Wrap" DataContext="{StaticResource cls_Ecuaciones_Cuadraticas_ViewModel}" Text="{Binding sParametroA, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="58"/>
+                            <TextBox x:Name="txtB" HorizontalAlignment="Left" Height="23" Margin="88,51,0,0" TextWrapping="Wrap" DataContext="{StaticResource cls_Ecuaciones_Cuadraticas_ViewModel}" Text="{Binding sParametroB, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="58"/>
+                            <TextBox x:Name="txtC" HorizontalAlignment="Left" Height="23" Margin="162,51,0,0" TextWrapping="Wrap" DataContext="{StaticResource cls_Ecuaciones_Cuadraticas_ViewModel}" Text="{Binding sParametroC, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="58"/>
+                            <Label x:Name="label1" Content="Discriminante:" HorizontalAlignment="Left" Height="25" Margin="10,105,0,0" VerticalAlignment="Top" Width="84"/>
+                            <Label x:Name="label1_Copy" Content="Solucion 1:" HorizontalAlignment="Left" Height="25" Margin="10,148,0,0" VerticalAlignment="Top" Width="74"/>
+                            <Label x:Name="label1_Copy1" Content="Solucion 2:" HorizontalAlignment="Left" Height="25" Margin="10,189,0,0" VerticalAlignment="Top" Width="74"/>
+                            <TextBox x:Name="txtDiscriminante" HorizontalAlignment="Left" Height="23" Margin="100,107,0,0" TextWrapping="Wrap" DataContext="{StaticResource cls_Ecuaciones_Cuadraticas_ViewModel}" Text="{Binding sDiscriminante, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+                            <TextBox x:Name="txtSolucion1" HorizontalAlignment="Left" Height="23" Margin="100,148,0,0" TextWrapping="Wrap" DataContext="{StaticResource cls_Ecuaciones_Cuadraticas_ViewModel}" Text="{Binding sSolucion1, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+                            <TextBox x:Name="txtSolucion2" HorizontalAlignment="Left" Height="23" Margin="100,189,0,0" TextWrapping="Wrap" DataContext="{StaticResource cls_Ecuaciones_Cuadraticas_ViewModel}" Text="{Binding sSolucion2, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+                            <GroupBox x:Name="groupBox1" Header="Opciones" HorizontalAlignment="Left" Height="87" Margin="340,10,0,0" VerticalAlignment="Top" Width="126">
+                                <Grid Background="#FFE5E5E5">
+                                    <Button x:Name="btnCalcular" DataContext="{StaticResource cls_Ecuaciones_Cuadraticas_ViewModel}" Command="{Binding CalcularDiscriminanteCommand}" Content="Calcular" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" VerticalAlignment="Top" Width="97"/>
+                                    <Button x:Name="btnLimpiar" DataContext="{StaticResource cls_Ecuaciones_Cuadraticas_ViewModel}" Command="{Binding LimpiarDatosCommand}" Content="Limpiar" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" VerticalAlignment="Top" Width="97"/>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
     </Grid>
-</Window>
+
+</Window>    

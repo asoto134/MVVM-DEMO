@@ -94,6 +94,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mvvm_Demo_ViewModel\Mvvm_Demo_ViewModel.csproj">
+      <Project>{c7a146a1-dbf6-411c-8515-98405070ed45}</Project>
+      <Name>Mvvm_Demo_ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

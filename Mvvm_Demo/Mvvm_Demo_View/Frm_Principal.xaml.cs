@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Mvvm_Demo_ViewModel;
 
 namespace Mvvm_Demo_View
 {
@@ -23,5 +24,6 @@ namespace Mvvm_Demo_View
         {
             InitializeComponent();
         }
+
     }
 }
