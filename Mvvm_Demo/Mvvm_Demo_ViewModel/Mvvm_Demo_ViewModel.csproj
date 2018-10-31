@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cls_Ecuaciones_Cuadraticas_ViewModel.cs" />
+    <Compile Include="Cls_Tablas_ViewModel.cs" />
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="ObservableObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
