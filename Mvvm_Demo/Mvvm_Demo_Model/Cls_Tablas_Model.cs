@@ -9,6 +9,8 @@ using System.Collections.ObjectModel;
 
 namespace Mvvm_Demo_Model
 {
+
+    // comentario de pruebas
     public class Tabla
     {
         int _iTabla;
